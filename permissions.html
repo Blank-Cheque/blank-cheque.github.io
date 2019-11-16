@@ -9,16 +9,16 @@
           groups[i] = groups[i].childNodes[3];
         }
         Array.prototype.forEach.call(groups, list => {
-          for (x = 1; x < list.length; x += 2) {
-            perm = list[x];
+          for (x = 1; x < list.childNodes.length; x += 2) {
+            perm = list.childNodes[x];
             perm = perm.childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
             console.log(val & i != 0);
             if (val & i != 0) {
-              document.getElementById(perm.id).checked = true;
+              perm.checked = true;
             } else {
-              document.getElementById(perm.id).checked = false;
+              perm.checked = false;
             }
           }
         })
