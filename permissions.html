@@ -14,42 +14,26 @@
     </style>
     <script>
       function main() {
-        val = document.getElementById("intInput").value;
-        var groups = document.getElementsByClassName("permGroup");
-        var newGroups = []
-        for (i = 0; i < 3; i++) {
-          newGroups[i] = groups[i].childNodes[3];
-        }
-        Array.prototype.forEach.call(newGroups, list => {
-          for (x = 1; x < list.childNodes.length; x += 2) {
-            perm = list.childNodes[x];
-            perm = perm.childNodes[1].childNodes[0].childNodes[0];
-            i = perm.getAttribute("val");
-            i = parseInt(i, 16);
-            if ((val & i) != 0) {
-              perm.checked = true;
-            } else {
-              perm.checked = false;
-            }
+        var val = document.getElementById("intInput").value;
+        var boxes = document.querySelectorAll('input[type="checkbox"]');
+        Array.prototype.forEach.call(boxes, perm => {
+          i = perm.getAttribute("val");
+          i = parseInt(i, 16);
+          if ((val & i) != 0) {
+            perm.checked = true;
+          } else {
+            perm.checked = false;
           }
         })
       }
       function getCurrent() {
-        var groups = document.getElementsByClassName("permGroup");
-        var newGroups = [];
-        for (i = 0; i < 3; i++) {
-          newGroups[i] = groups[i].childNodes[3];
-        }
         var totalPerms = 0;
-        Array.prototype.forEach.call(newGroups, list => {
-          for (x = 1; x < list.childNodes.length; x += 2) {
-            perm = list.childNodes[x];
-            perm = perm.childNodes[1].childNodes[0].childNodes[0];
-            if (perm.checked) {
-              i = perm.getAttribute("val");
-              i = parseInt(i, 16);
-              totalPerms += i;
-            }
+        var boxes = document.querySelectorAll('input[type="checkbox"]');
+        Array.prototype.forEach.call(boxes, perm => {
+          if (perm.checked) {
+            i = perm.getAttribute("val");
+            i = parseInt(i, 16);
+            totalPerms += i;
           }
         })
         input = document.getElementById("intInput");
