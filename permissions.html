@@ -53,12 +53,6 @@
         }
         document.getElementById("intInput").addEventListener("keydown", main);
       }
-      function clear() {
-        var boxes = document.querySelectorAll('input[type="checkbox"]');
-        Array.prototype.forEach.call(boxes, perm => {
-          perm.checked = false;
-        })
-      }
     </script>
     <title>Discord Permissions Integers</title>
   </head>
@@ -66,7 +60,6 @@
     <div class="app">
       <input id="intInput" class="intInput" type="number" placeholder="integer...">
       <button id="go" class="go" type="button" onclick="main()">Go</button>
-      <button type="button" onclick="clear()" class="clearButton">Clear</button>
       <div class="types">
         <div class="permGroup">
           <h2>General Permissions</h2>
