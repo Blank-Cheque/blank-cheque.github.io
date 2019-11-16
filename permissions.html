@@ -16,7 +16,7 @@
             perm = perm.childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
-            console.log(val & i != 0);
+            console.log(val, i);
             if (val & i != 0) {
               perm.checked = true;
             } else {
