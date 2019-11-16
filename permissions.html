@@ -8,17 +8,17 @@
         for (i = 0; i < 3; i++) {
           groups[i] = groups[i].childNodes[3];
         }
-        var totalPerms = 0;
         Array.prototype.forEach.call(groups, list => {
           for (x = 1; x < list.length; x += 2) {
             perm = list[x];
             perm = perm.childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
+            console.log(val & i != 0);
             if (val & i != 0) {
-              perm.checked = true;
+              document.getElementById(perm.id).checked = true;
             } else {
-              perm.checked = false;
+              document.getElementById(perm.id).checked = false;
             }
           }
         })
