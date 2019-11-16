@@ -26,13 +26,15 @@
       function getCurrent() {
         var groups = document.getElementsByClassName("permGroup");
         console.log(1, groups);
+        var newGroups = [];
         for (i = 0; i < 3; i++) {
-          groups[i] = groups[i][3];
+          newGroups[i] = groups[i][3];
         }
         console.log(2, groups);
         var totalPerms = 0;
         Array.prototype.forEach.call(groups, list => {
           console.log(3, list);
+          list = 
           for (x = 1; x < list.length; x += 2) {
             perm = list[x];
             console.log(4, perm);
