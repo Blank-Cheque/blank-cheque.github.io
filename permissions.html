@@ -29,7 +29,7 @@
         window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
           params[key] = value;
         });
-        if ("perm" in params) {
+        if ("perms" in params) {
           perm = params["perms"];
           input = document.getElementById("intInput");
           input.value = perm;
