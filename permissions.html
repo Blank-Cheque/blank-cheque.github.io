@@ -23,7 +23,7 @@
         Array.prototype.forEach.call(newGroups, list => {
           for (x = 1; x < list.childNodes.length; x += 2) {
             perm = list.childNodes[x];
-            perm = perm.childNodes[0].childNodes[0];
+            perm = perm.childNodes[0].childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
             if ((val & i) != 0) {
@@ -44,7 +44,7 @@
         Array.prototype.forEach.call(newGroups, list => {
           for (x = 1; x < list.childNodes.length; x += 2) {
             perm = list.childNodes[x];
-            perm = perm.childNodes[0].childNodes[0];
+            perm = perm.childNodes[0].childNodes[0].childNodes[0];
             if (perm.checked) {
               i = perm.getAttribute("val");
               i = parseInt(i, 16);
