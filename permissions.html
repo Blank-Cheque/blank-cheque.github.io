@@ -6,7 +6,7 @@
     </style>
     <script>
       function on_load() {
-        var params;
+        var params = {};
         window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
           params[key] = value;
         });
