@@ -14,7 +14,7 @@
         var totalPerms = 0;
         Array.prototype.forEach.call(groups, list => {
           Array.prototype.forEach.call(list.childNodes, perm => {
-            perm = perm.childNodes[0].childNodes[0];
+            perm = perm.childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
             console.log(i);
