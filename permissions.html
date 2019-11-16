@@ -10,10 +10,12 @@
         window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
           params[key] = value;
         });
-        perm = params["perms"];
-        input = document.getElementsByClassName("intInput")[0];
-        input.value = perm;
-        console.log(perm);
+        if ("perm" in params) {
+          perm = params["perms"];
+          input = document.getElementsByClassName("intInput")[0];
+          input.value = perm;
+          console.log(perm);
+        }
       };
     </script>
     <title>Discord Permissions Integers</title>
