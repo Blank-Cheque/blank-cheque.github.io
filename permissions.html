@@ -37,10 +37,12 @@
             perm = list[x];
             console.log(4, perm);
             perm = perm.childNodes[0].childNodes[0];
-            i = perm.getAttribute("val");
-            i = parseInt(i, 16);
-            console.log(i);
-            totalPerms += i;
+            if (perm.checked) {
+              i = perm.getAttribute("val");
+              i = parseInt(i, 16);
+              console.log(i);
+              totalPerms += i;
+            }
           }
         })
         input = document.getElementById("intInput");
