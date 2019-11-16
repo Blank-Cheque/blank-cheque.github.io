@@ -17,6 +17,7 @@
             perm = perm.childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
+            console.log(i);
             totalPerms += i;
           }
         }
@@ -34,6 +35,7 @@
           input.value = perm;
           main();
           console.log(perm);
+          console.log(1);
         }
       };
     </script>
