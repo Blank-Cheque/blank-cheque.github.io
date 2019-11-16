@@ -12,8 +12,8 @@
           groups[i] = groups[i][1];
         }
         var totalPerms = 0;
-        for each (list in groups) {
-          for each (perm in groups.childNodes) {
+        groups.forEach(list => {
+          list.childNodes.forEach(perm => {
             perm = perm.childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
