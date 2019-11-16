@@ -9,17 +9,18 @@
       function getCurrent() {
         var groups = document.getElementsByClassName("permGroup");
         for (i = 0; i < 3; i++) {
-          groups[i] = groups[i][1];
+          groups[i] = groups[i][3];
         }
         var totalPerms = 0;
         Array.prototype.forEach.call(groups, list => {
-          Array.prototype.forEach.call(list.childNodes, perm => {
+          for (x = 1; x < list.length; x += 2) {
+            perm = list[x];
             perm = perm.childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
             console.log(i);
             totalPerms += i;
-          })
+          }
         })
         input = document.getElementById("intInput");
         input.value = totalPerms;
