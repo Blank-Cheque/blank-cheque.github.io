@@ -10,7 +10,7 @@
         var groups = document.getElementsByClassName("permGroup");
         for (i = 0; i < 3; i++) {
           groups[i] = groups[i][1];
-        };
+        }
         var totalPerms = 0;
         for each (list in groups) {
           for each (perm in groups.childNodes) {
@@ -23,7 +23,7 @@
         }
         input = document.getElementById("intInput");
         input.value = totalPerms;
-      };
+      }
       function on_load() {
         var params = {};
         window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -37,7 +37,7 @@
           console.log(perm);
           console.log(1);
         }
-      };
+      }
     </script>
     <title>Discord Permissions Integers</title>
   </head>
