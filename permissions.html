@@ -12,8 +12,8 @@
           groups[i] = groups[i][1];
         }
         var totalPerms = 0;
-        groups.forEach(list => {
-          list.childNodes.forEach(perm => {
+        Array.prototype.forEach.call(groups, list => {
+          Array.prototype.forEach.call(list.childNodes, perm => {
             perm = perm.childNodes[0].childNodes[0];
             i = perm.getAttribute("val");
             i = parseInt(i, 16);
