@@ -10,14 +10,17 @@
         window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
           params[key] = value;
         });
-        console.log(params);
+        perm = params["perms"];
+        input = document.getElementsByClassName("intInput")[0];
+        input.value = perm
+        console.log(perm);
       };
     </script>
     <title>Discord Permissions Integers</title>
   </head>
   <body onload="on_load()">
     <div class="app">
-      <input type="text" placeholder="integer...">
+      <input class="intInput" type="text" placeholder="integer...">
     </div>
   </body>
 </html>
