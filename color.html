@@ -1,1 +1,33 @@
-
+<html>
+  <head>
+    <script>
+      function on_load() {
+        var params = {};
+        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+          params[key] = value;
+        });
+        if ("color" in params) {
+          var color = params["color"];
+        } else {
+          var urlParts = document.URL.split('#');
+          if (urlParts.length > 1) {
+            var color = urlParts[1];
+          } else {
+            var color = Math.floor(Math.random() * 16777215);
+            color = color.toString(16);
+          }
+        }
+        document.documentElement.cssText = "background-color: " + color;
+        var text = document.querySelector('.text');
+        text.innerHTML = "Now viewing #" + color;
+      }
+    </script>
+    <style>
+      .text { color: #000; font-size: 60px; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; font-family: sans-serif; text-align: center; margin-top: 20%; }
+    </style>
+    <title>Hex Color Viewer</title>
+  </head>
+  <body>
+    <p class="text">Please wait...</p>
+  </body>
+</html>
