@@ -17,6 +17,7 @@
             color = color.toString(16);
           }
         }
+        color = color.toUpperCase();
         document.documentElement.cssText = "background-color: " + color;
         var text = document.querySelector('.text');
         text.innerHTML = "Now viewing #" + color;
